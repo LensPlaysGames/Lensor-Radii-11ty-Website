@@ -1,0 +1,19 @@
+﻿---
+layout: layouts/layout.liquid
+
+url: https://lens-or-radii.netlify.app/other-projects/
+title: Other Projects
+description: A Collection of Lens' Hobby Projects
+
+pagination:
+    data: collections.project
+    size: 10
+    reverse: true
+    alias: projects
+---
+
+{% block content %}
+    {% for project in projects %}
+        {% include {{ project }} %}
+    {% endfor %}
+{% endblock %}

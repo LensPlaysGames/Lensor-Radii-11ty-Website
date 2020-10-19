@@ -58,6 +58,13 @@
 }
 
 .pic-sm {
+    max-width: 360px;
+    min-width: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.pic-x-sm {
     max-width: 240px;
     min-width: 0px;
     width: 100%;

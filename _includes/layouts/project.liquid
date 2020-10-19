@@ -1,0 +1,46 @@
+﻿<div class="row jumbotron gradient-diag m-0 mb-3 p-3 text-center" hidden>
+    <h2 class="col pl-4 pt-0 mt-0 text-left">{{ title }}</h2>
+    <div class="col-lg-12">
+        {{ description }}<br />
+        <div class="col card w-nomin gradient-diag-bright text-body my-2">
+            <div class="card-header"><a href="{{ main-image-url }}" target="_self"><img class="img-fluid pic-md-h shadow" src="{{ main-image-url }}" alt="{{ main-image-alt }}" /></a></div>
+            <div class="card-body p-2"><cite><small>{{ main-image-caption }}</small></cite></div>
+        </div>
+    </div>
+    <span class="jumbotron w-100 gradient-diag-bright text-left text-body py-2">{{ about }}</span>
+    <div class="col card gradient-diag-dark m-0 p-3">
+        <div class="badge badge-secondary mb-3"><h3 class="text-white">Materials</h3></div>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>Quantity</td>
+                    <td>Component</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for component in components %}
+                <tr>
+                    <td>{{ component.amount }}</td>
+                    <td>{{ component.name }}</td>
+                    <td>{{ component.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="col-lg-12">
+            <div class="row">
+                {% for img in images %}
+                <div class="col card w-nomin gradient-diag-bright text-body m-1">
+                    <div class="card-header"><img class="img-fluid pic-sm-h shadow" src="{{ img.url }}" /></div>
+                    <div class="card-body p-2"><cite><small>{{ img.caption }}</small></cite></div>
+                </div>
+                {% endfor %}
+                <div class="col card w-nomin gradient-diag-bright text-body m-1">
+                    <div class="card-header"><img class="img-fluid pic-sm-h shadow" src="/img/lens-yeah.jpg" /></div>
+                    <div class="card-body p-2"><cite><small>Watch where you walk</small></cite></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
