@@ -12,11 +12,13 @@ img-html: <img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.j
     <div class="col-lg-12 my-3 mx-auto">
         <a href="/img/BCD-Counter-LEDs-sm.jpg" target="_self">
             <div class="row card gradient-diag m-0 mb-3 p-3 text-center text-white">
-                <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ title }}</h2>
-                <div class="col card-body w-nomin gradient-diag-bright text-body text-center my-2">
-                    {{ img-html }}
-                    <div>{{ description }}</div>
+                <div class="card-header col pl-4 pt-0 mt-0 text-left">
+                    <h2>{{ title }}</h2>
+                    <div class="col w-nomin gradient-diag-bright text-body text-center my-2">
+                        {{ img-html }}
+                    </div>
                 </div>
+                <div class="card-body">{{ description }}</div>
             </div>
         </a>
     </div>
