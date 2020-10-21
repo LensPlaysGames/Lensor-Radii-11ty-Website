@@ -77,21 +77,21 @@
 
 .pic-lg-h {
     max-width: 640px;
-    min-width: 480px;
+    min-width: 0px;
     width: auto;
     height: 100%;
 }
 
 .pic-md-h {
     max-width: 480px;
-    min-width: 240px;
+    min-width: 0px;
     width: auto;
     height: 100%;
 }
 
 .pic-sm-h {
     max-height: 240px;
-    min-width: 120px;
+    min-width: 0px;
     width: auto;
     height: 100%;
 }
@@ -164,21 +164,21 @@
 
     .pic-lg-h {
         max-width: 480px;
-        min-width: 240px;
+        min-width: 0px;
         width: 100%;
         height: auto;
     }
 
     .pic-md-h {
         max-width: 360px;
-        min-width: 120px;
+        min-width: 0px;
         width: 100%;
         height: auto;
     }
 
     .pic-sm-h {
         max-height: 240px;
-        min-width: 60px;
+        min-width: 0px;
         width: 100%;
         height: auto;
     }
