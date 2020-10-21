@@ -14,12 +14,14 @@ pagination:
 
 {% block content %}
     {% for project in projects %}
-        <a href="{{ project.url | url }}" target="_self"><div class="row card gradient-diag m-0 mb-3 p-3 text-center text-white">
-            <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ project.data.title }}</h2>
-            <div class="col card w-nomin gradient-diag-bright text-body my-2">
-                {{ project.data.img-html }}
-                <div class="card-body">{{ project.data.description }}</div>
+        <a href="{{ project.url | url }}" target="_self">
+            <div class="row card gradient-diag m-0 mb-3 p-3 text-center text-white">
+                <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ project.data.title }}</h2>
+                <div class="col card w-nomin gradient-diag-bright text-body my-2">
+                    {{ project.data.img-html }}
+                    <div class="card-body">{{ project.data.description }}</div>
+                </div>
             </div>
-        </div></a>
+        </a>
     {% endfor %}
 {% endblock %}
