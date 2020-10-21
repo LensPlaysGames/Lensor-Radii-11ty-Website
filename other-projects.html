@@ -23,7 +23,7 @@ pagination:
                 <div class="project-header text-left">
                     <h2>{{ project.data.title }}</h2>
                 </div>
-                <small><cite>Created on {{ project.date }}</cite></small>
+                <small><cite>Created on {{ project.date | date: "%Y-%m-%d, %H:%M:%S" }}</cite></small>
                 <div class="my-2 py-0 text-center">
                     <img class="img-fluid pic-md shadow" src="{{ project.data.img-url }}" />
                 </div>
