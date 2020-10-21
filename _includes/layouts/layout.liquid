@@ -9,12 +9,12 @@
         <meta name="og:type" content="website" />
         <meta property="og:title" content="{{ title }} - Lensor Radii" />
         <meta name="og:description" content="{{ description }}" />
-        <meta name="og:image" content="" />
+        <meta name="og:image" content="/img/lens-high-sm.jpg" />
         <meta name="twitter:url" content="{{ url }}" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="{{ title }} - Lensor Radii" />
         <meta name="twitter:description" content="{{ description }}" />
-        <meta name="twitter:image" content="" />
+        <meta name="twitter:image" content="/img/lens-high-sm.jpg" />
         <meta name="canonical" content="{{ url }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -35,14 +35,15 @@
                             <div class="btn btn-dark"><a class="nav-link text-light h4" href="/" target="_self">Home</a></div>
                             <div class="btn btn-dark"><a class="nav-link text-light h4" href="/epk/index.html" target="_self">Electronic Press Kit</a></div>
                             <div class="btn btn-dark" hidden><a class="nav-link text-light h4" href="/about-lens.html" target="_self">About Lens</a></div>
-                            <div class="btn btn-dark" hidden><a class="nav-link text-light h4" href="/other-projects.html" target="_self">Other Projects</a></div>
+                            <div class="btn btn-dark"><a class="nav-link text-light h4" href="/other-projects.html" target="_self">Other Projects</a></div>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
+        <!--CONTENT-->
         <div class="container">
-            {% block content %}{{ content | safe }}{% endblock %}
+            {% block content %}{{ content }}{% endblock %}
         </div>
         <!--jQuery, Popper.js, Bootstrap.js-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
