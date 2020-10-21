@@ -5,21 +5,24 @@ tags: project
 url: https://lensor-radii-11ty.netlify.app/posts/bcd-counter/
 title: Binary Coded Decimal LED Counter
 description: Count from 0 to 9 with the click of a button!
-img-html: <img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.jpg" alt="One of Four Green LEDs lit up; the rightmost one. Shows Example of Circuit in Action" />
+img-url: /img/BCD-Counter-LEDs-sm.jpg
 ---
 
 {% block content %}
-<div class="row jumbotron gradient-diag m-0 mb-3 p-3 text-center text-white">
+<div class="row jumbotron my-4 gradient-diag m-0 mb-3 p-3 text-center text-white">
     <h2 class="col pl-4 pt-0 mt-0 text-left">{{ title }}</h2>
     <div class="col-lg-12 card my-3 mx-auto gradient-diag-bright">
         <div class="card-header pl-4 pt-0 mt-0 text-center">
             <div class="w-nomin text-body text-center my-2">
-                <a href="/img/BCD-Counter-LEDs-sm.jpg" target="_self">{{ img-html }}</a>
+                <a href="/img/BCD-Counter-LEDs-sm.jpg" target="_self">
+                    <img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.jpg" alt="One of Four Green LEDs lit up; the rightmost one. Shows Example of Circuit in Action" />
+                </a>
             </div>
         </div>
         <div class="card-body text-body text-center">{{ description }}</div>
     </div>
-    <span class="jumbotron w-100 gradient-diag-light text-left text-body py-2 my-3">A great project that helped me learn some wiring basics, test my breadboards, figure out how to use Integrated Circuits, and get familiar with counting in binary! <br />
+    <span class="jumbotron w-100 gradient-diag-bright text-left text-body py-2 my-3">
+        A great project that helped me learn some wiring basics, test my breadboards, figure out how to use Integrated Circuits, and get familiar with counting in binary! <br />
     I used a 74LS90 IC to Increment our Count, a 555 timer to debounce our push-button, and LEDs to display the binary output!</span>
     <div class="col card gradient-diag-dark m-0 p-3">
         <div class="badge badge-secondary mb-3"><h3 class="text-white">Materials</h3></div>
@@ -40,11 +43,11 @@ img-html: <img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.j
         </table>
         <div class="col-lg-12">
             <div class="row">
-                <div class="col card w-nomin gradient-diag-bright text-body m-1">
+                <div class="col-sm card w-nomin gradient-diag-bright text-body m-1">
                     <div class="card-header"><a href="/img/BCD-Counter-Circuit-Diagram.png"><img class="img-fluid pic-sm-h shadow" src="/img/BCD-Counter-Circuit-Diagram.png" alt="Circuit Diagram of Binary Coded Decimal Counter"/></a></div>
                     <div class="card-body p-2"><cite><small>Circuit Diagram</small></cite></div>
                 </div>
-                <div class="col card w-nomin gradient-diag-bright text-body m-1">
+                <div class="col-sm card w-nomin gradient-diag-bright text-body m-1">
                     <div class="card-header"><a href="/img/BCD-Counter-Overview-sm.jpg"><img class="img-fluid pic-sm-h shadow" src="/img/BCD-Counter-Overview-sm.jpg" alt="Binary Coded Decimal Counter Circuit built on Solderless Plug-In Breadboard" /></a></div>
                     <div class="card-body p-2"><cite><small>Finished Circuit</small></cite></div>
                 </div>

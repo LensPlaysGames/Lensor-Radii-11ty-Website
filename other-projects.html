@@ -1,7 +1,7 @@
 ﻿---
 layout: layouts/layout.liquid
 
-url: https://lens-or-radii.netlify.app/other-projects/
+url: https://lensor-radii-11ty.netlify.app/other-projects/
 title: Other Projects
 description: A Collection of Lens' Hobby Projects
 
@@ -13,14 +13,21 @@ pagination:
 ---
 
 {% block content %}
+    <div class="card gradient-diag m-0 my-2 p-3 text-white text-center">
+        <h2>Lens' Other Projects</h2>
+        <span>Each Card is a Link to a Full Post!</span>
+    </div>
     {% for project in projects %}
         <a href="{{ project.url | url }}" target="_self">
-            <div class="row card gradient-diag m-0 mb-3 p-3 text-white">
-                <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ project.data.title }}</h2>
-                <div class="my-2 py-0 text-center">
-                    {{ project.data.img-html }}
+            <div class="jumbotron-project">
+                <div class="project-header text-left">
+                    <h2>{{ project.data.title }}</h2>
                 </div>
-                <div class="col card-body gradient-diag-bright w-nomin text-body text-center my-2">
+                <small class="text-dark"><cite>Created on {{ project.date }}</cite></small>
+                <div class="my-2 py-0 text-center">
+                    <img class="img-fluid pic-md shadow" src="{{ project.data.img-url }}" />
+                </div>
+                <div class="card-body btn gradient-diag-bright shadow w-nomin text-body text-center my-2">
                     <div>{{ project.data.description }}</div>
                 </div>
             </div>
