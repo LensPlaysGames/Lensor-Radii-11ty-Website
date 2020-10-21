@@ -30,6 +30,14 @@
     background: linear-gradient(135deg, rgb(200, 209, 217) 0%, rgb(160, 169, 177) 100%);
 }
 
+.gradient-diag-bright-2 {
+    background: linear-gradient(135deg, rgb(180, 189, 197) 0%, rgb(140, 149, 157) 100%);
+}
+
+.gradient-diag-shine {
+    background: linear-gradient(135deg, rgb(220, 229, 237) 0%, rgb(180, 189, 197) 100%);
+}
+
 .gradient-diag-dark {
     background: linear-gradient(135deg, rgb(56, 62, 72) 50%, rgb(33, 33, 33) 100%);
 }
