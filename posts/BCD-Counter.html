@@ -4,17 +4,14 @@ tags: project
 
 title: Binary Coded Decimal LED Counter
 description: Count from 0 to 9 with the click of a button!
-img-html: <img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.jpg" alt="One of Four Green LEDs lit up; the rightmost one. Shows Example of Circuit in Action" />
+img-html: <div class="col card w-nomin gradient-diag-bright text-body my-2"><div class="card-header"><a href="/img/BCD-Counter-LEDs-sm.jpg" target="_self"><img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.jpg" alt="One of Four Green LEDs lit up; the rightmost one. Shows Example of Circuit in Action" /></a></div><div class="card-body p-2"><cite><small>A One in the 74LS90's Output Displayed with LEDs</small></cite></div></div>
 ---
 
 <div class="row jumbotron gradient-diag m-0 mb-3 p-3 text-center text-white">
     <h2 class="col pl-4 pt-0 mt-0 text-left">Binary Coded Decimal LED Counter</h2>
     <div class="col-lg-12 my-3 mx-auto">
         Count from 0 to 9 with the click of a button!<br />
-        <div class="col card w-nomin gradient-diag-bright text-body my-2">
-            <div class="card-header"><a href="/img/BCD-Counter-LEDs-sm.jpg" target="_self"><img class="img-fluid pic-md-h shadow" src="/img/BCD-Counter-LEDs-sm.jpg" alt="One of Four Green LEDs lit up; the rightmost one. Shows Example of Circuit in Action" /></a></div>
-            <div class="card-body p-2"><cite><small>A One in the 74LS90's Output Displayed with LEDs</small></cite></div>
-        </div>
+        {{ img-html }}
     </div>
     <span class="jumbotron w-100 gradient-diag-light text-left text-body py-2 my-3">A great project that helped me learn some wiring basics, test my breadboards, figure out how to use Integrated Circuits, and get familiar with counting in binary! <br />
     I used a 74LS90 IC to Increment our Count, a 555 timer to debounce our push-button, and LEDs to display the binary output!</span>
