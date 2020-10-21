@@ -75,34 +75,6 @@
     height: auto;
 }
 
-.pic-lg-h {
-    max-width: 640px;
-    min-width: 0px;
-    width: auto;
-    height: 100%;
-}
-
-.pic-md-h {
-    max-width: 480px;
-    min-width: 0px;
-    width: auto;
-    height: 100%;
-}
-
-.pic-sm-h {
-    max-height: 240px;
-    min-width: 0px;
-    width: auto;
-    height: 100%;
-}
-
-.pic-x-sm-h {
-    max-width: 240px;
-    min-width: 0px;
-    width: auto;
-    height: 100%;
-}
-
 .project-header {
     background: none;
     border-bottom: 1px solid rgba(0,0,0,.125);
