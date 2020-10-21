@@ -15,9 +15,9 @@ pagination:
 {% block content %}
     {% for project in projects %}
         <a href="{{ project.url | url }}" target="_self">
-            <div class="row card gradient-diag-bright m-0 mb-3 p-3 text-center">
-                <div>
-                    <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ project.data.title }}</h2>
+            <div class="row card gradient-diag m-0 mb-3 p-3 text-white">
+                <h2 class="card-header col pl-4 pt-0 mt-0 text-left">{{ project.data.title }}</h2>
+                <div class="my-2 py-0">
                     {{ project.data.img-html }}
                 </div>
                 <div class="col card-body w-nomin text-body text-center my-2">
