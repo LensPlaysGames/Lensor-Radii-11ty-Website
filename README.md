@@ -2,4 +2,4 @@
 
 # Lensor-Radii-11ty-Website 
 
-I whole-heartedly thank those who develop 11ty as it's an amazing CMS while still giving full control to the end user.
+I whole-heartedly thank those who develop [11ty](https://github.com/11ty) as it's an amazing CMS while still giving full control to the end user.
