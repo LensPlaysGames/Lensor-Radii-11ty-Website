@@ -2,16 +2,24 @@
     font-size: 3rem;
 }
 
+.text-link {
+    color: #14acff;
+    text-decoration: none;
+}
+
+.text-link:visited {
+    color: #108bff;
+}
+
+.text-link:hover {
+    color: #147ab3;
+    text-decoration: underline;
+}
+
+.text-link:active
+
 .card {
     min-width: 300px;
-}
-
-.gradient-side {
-    background: linear-gradient(90deg, rgb(108, 117, 125) 0%, rgb(51, 61, 69) 100%);
-}
-
-.gradient-side-dark {
-    background: linear-gradient(90deg, rgb(56, 62, 72) 0%, rgb(15, 25, 33) 100%);
 }
 
 .gradient-diag {
@@ -40,6 +48,14 @@
 
 .gradient-diag-dark {
     background: linear-gradient(135deg, rgb(56, 62, 72) 50%, rgb(33, 33, 33) 100%);
+}
+
+.gradient-side {
+    background: linear-gradient(90deg, rgb(108, 117, 125) 0%, rgb(51, 61, 69) 100%);
+}
+
+.gradient-side-dark {
+    background: linear-gradient(90deg, rgb(56, 62, 72) 0%, rgb(15, 25, 33) 100%);
 }
 
 .gradient-side-black {
