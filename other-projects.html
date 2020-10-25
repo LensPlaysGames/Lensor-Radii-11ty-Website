@@ -18,7 +18,7 @@ pagination:
         <span>Each Card is a Link to a Full Post!</span>
     </div>
     {% for project in projects %}
-        <a href="{{ project.url | url }}" target="_self">
+        <a href="{{ project.url | url }}">
             <div class="jumbotron-project">
                 <div class="project-header text-left">
                     <h2>{{ project.data.title }}</h2>
