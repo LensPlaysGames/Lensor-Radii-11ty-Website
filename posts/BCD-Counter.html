@@ -58,8 +58,9 @@ img-url: /img/BCD-Counter-LEDs-sm.jpg
             I really recommend this circuit starting out! It's simple enough to understand and has actually-useful applications in the real world (clocks, debouncing inputs, RC time constants, and more!).<br />
             Also, it's fun to push a button and have lights move around 😄.<br />
             <br />
-            Speaking of how it functioned: just push the button, and the counter IC (integrated chip) would increment by one. The output LEDs will display the incremented number from 0-9 in binary 
-            (looping back to 0 when it gets to 10). This is called binary-coded decimal when we stop at 10 in decimal even though counting in binary.<br />
+            Speaking of how it functions: when the button was pushed, the Counter IC (74LS90 Integrated Chip) increments by one. 
+            The output LEDs display the incremented number in binary (looping back to zero when it gets to ten, aka past nine). 
+            This is called binary-coded decimal when we stop at ten in decimal even though counting in binary.<br />
             <br />
             <small>For this next bit, I'm assuming you have basic knowledge about the <a href="https://en.wikipedia.org/wiki/555_timer_IC" data-toggle="tooltip" title="555 Timer IC - Wikipedia">555 timer IC</a> and how it works internally. If not, 
                 <a class="text-link" href="https://www.electronics-tutorials.ws/waveforms/555_timer.html" data-toggle="tooltip" title="555 Timer IC Overview - Electronics Tutorials">here</a> is a great resource for more information regarding that topic.</small><br />
@@ -85,7 +86,13 @@ img-url: /img/BCD-Counter-LEDs-sm.jpg
                 </li>
                 <li class="list-group-item gradient-diag-shine text-body">
                     Now, that charge that we were able to store in C1 is ripped from it's clutches as current travels through R1, into Pin 7 (Discharge), straight to ground.
-                    Once the charge across C1 is zero, we are back at our starting state, completing our loop. The circuit will stay in this stable mode (LOW, in this case) until pushed unstable once again.
+                    Once the charge across C1 is zero, we are back at our starting state, completing our loop.
+                    The circuit will stay in this stable mode (LOW, in this case) until pushed unstable once again.
+                    Those 5 steps we just went over describe how the 555 can be controlled via the use of a push button and a few components.
+                    The 555 in this case is used to detect when the button is pressed, sending a logic HIGH signal to output for a short time, then low again.
+                    Obviously, while logic level is HIGH, you can't magically make more current flow through the output simply by pushing the button again, or by the contacts inside the switch bouncing (which causes multiple logic level 'presses' in a single actuation).
+                    Yay! This solves our switch-bouncing problem, therefore 'de-bouncing' our push-button. 
+                    This clean logic level signal is connected to the Counter IC CLK Input, causing one count per push-button actuation.
                 </li>
             </ul>       
         </span>
