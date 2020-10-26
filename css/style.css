@@ -16,8 +16,6 @@
     text-decoration: underline;
 }
 
-.text-link:active
-
 .card {
     min-width: 300px;
 }
@@ -27,7 +25,7 @@
 }
 
 .gradient-diag-light {
-    background: linear-gradient(135deg, rgb(160, 169, 177) 0%, rgb(110, 119, 127) 100%);
+    background: linear-gradient(135deg, rgb(150, 159, 167) 0%, rgb(110, 119, 127) 100%);
 }
 
 .gradient-diag-light-2 {
@@ -43,7 +41,7 @@
 }
 
 .gradient-diag-shine {
-    background: linear-gradient(135deg, rgb(220, 229, 237) 0%, rgb(180, 189, 197) 100%);
+    background: linear-gradient(135deg, rgb(230, 239, 247) 0%, rgb(200, 209, 217) 100%);
 }
 
 .gradient-diag-dark {
