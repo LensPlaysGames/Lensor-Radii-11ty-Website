@@ -16,6 +16,10 @@
     text-decoration: underline;
 }
 
+.text-paragraph {
+    min-width: 1vmax;
+}
+
 .card {
     min-width: 300px;
 }
@@ -128,6 +132,13 @@
         font-size: 2rem;
     }
 
+    h4 {
+        font-size: 1.2rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+
     .pic-lg {
         max-width: 480px;
         min-width: 240px;
@@ -192,5 +203,11 @@
 
     h2 {
         font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: .5rem;
     }
 }

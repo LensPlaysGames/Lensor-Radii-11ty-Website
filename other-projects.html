@@ -4,12 +4,6 @@ layout: layouts/layout.liquid
 url: https://lensor-radii.netlify.app/other-projects/
 title: Other Projects
 description: A Collection of Lens' Hobby Projects
-
-pagination:
-    data: collections.project
-    size: 10
-    reverse: true
-    alias: projects
 ---
 
 {% block content %}
@@ -17,13 +11,18 @@ pagination:
         <h2>Lens' Other Projects</h2>
         <span>Each Card is a Link to a Full Post!</span>
     </div>
-    {% for project in projects %}
-        <a href="{{ project.url | url }}" data-toggle="tooltip" title="{{ project.title }} - Lensor Radii">
+    {% for project in collections.project reversed %}
+        <a href="{{ project.url | url }}" data-toggle="tooltip" title="{{ project.data.title }} - Lensor Radii">
             <div class="jumbotron-project">
                 <div class="project-header text-left">
                     <h2>{{ project.data.title }}</h2>
                 </div>
-                <small><cite>Created on {{ project.date | date: "%Y-%m-%d, %H:%M:%S" }}</cite></small>
+                <small>
+                    <cite>
+                        Created on {{ project.date | date: "%Y-%m-%d, %H:%M:%S" }}<br />
+                        Updated on {{ "now" | date: "%Y-%m-%d, %H:%M:%S" }}
+                    </cite>
+                </small>
                 <div class="my-2 py-0 text-center">
                     <img class="img-fluid pic-md shadow" src="{{ project.data.img-url }}" />
                 </div>
