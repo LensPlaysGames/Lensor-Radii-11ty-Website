@@ -94,19 +94,20 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 If you need a <a class="text-link" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials">refresher on transistors</a> and how they work, here is a great resource I found.<br /><br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                In this article, I explain both the function and how to build a Class AB power amplifier with Class A driver, negative feedback, and bootstrapping.<br />
+                In this article, I explain both the function and how to build a common-collector Class AB power amplifier with a common-emitter Class A driver, as well as negative feedback and bootstrapping. 
+                I designed the circuit with darlington transistors, as this increases the input impedace (a la gain) with minimal repercussions. This also takes some thermal strain off of each transistor.<br />
             <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                This circuit can be powered anywhere from +9v DC to (technically) the max that your transistors allow, 
-                although I don't recommend that unless you have a very serious heat-sink attached very well to your output stage.
+                This circuit can be powered anywhere from around +9v DC to (technically) the max that your transistors allow, 
+                although I don't recommend that unless you have a very serious heat-sink attached very well to your output stage and biasing components.
                 I tried +5v DC from a USB cable, but I found that it is almost impossible to get the bias correct in a way that it does not oscillate, 
-                or clip immediately due to only having around ±1v of headroom.<br />
+                or clip immediately due to only having around ±1v of headroom at the output.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                The input signal starts out flowing through R1, 
-                which just increases the input impedance of our driver in case of low-output impedance devices used as an input.<br />
+                The input signal starts out flowing through R1.
+                This just increases the input impedance of our driver in case of low-output impedance devices used as an input.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -116,14 +117,14 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                Q1, an NPN transistor, acts as the driver, making sure the output stage has enough current and power, not just relying on whatever input you happen to plug in to supply your valuable, valuable electrons. 
-                This circuit could also be driven by an op-amp, like the NE5532 or similar, but a simple transistor works just as well when biased correctly. <br />
+                Q1, an NPN transistor, acts as the driver (voltage amplifier), making sure the output stage has enough current and voltage, not just relying on whatever input you happen to plug in to supply your valuable, valuable electrons. 
+                This circuit could also be driven by an op-amp, like the NE5532 or similar, but a simple class A transistor amplifier works just as well when biased correctly.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 Q2 and Q3, both NPN transistors, as well as Q4 and Q5, both PNP transistors, make up the output-stage. There are two of each because they form darlington transistor pairs. 
                 You could also build this exact circuit without the darlington pairs (as I did, at first), but, like me, you'll come to realize those transistors get so hot they boil water off of your fingers, even with VCC+ @ +12v DC and the input coming from a 3.5mm jack on a phone.
-                So, yeah, that's something I can't recommend unless you have a sufficient heat-sink and/or a transistor rated for high-current. <br />
+                So, yeah, that's something I can't recommend unless you have a sufficient heat-sink and/or a different transistor rated for higher current. <br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -190,7 +191,7 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 It also has a tendency to cause oscillation if improper values are chosen. So, why even include it if it reduces amplification and causes problems?
                 Well, it also gives us a range of benefits that are very useful, even in audio applications.
                 One of those is reliability, or really, reproducibility. 
-                Transistor's functional values, like the amount of gain they produce, is very dependant on variable factors, like temperature, and humidity, even.
+                Transistor's functional values, like the amount of gain they produce, are very dependant on variable factors, like temperature, and humidity, even.
                 This means that in a cold room, you could blow out your speakers, and in a toasty sauna, it might not even amplify the input at all. For commercial products, this is not good.
                 To get around this environmental dependancy, we can set the gain of the amplifier using resistors, which have a linear temperature response. 
                 This gives us a solid, non-variable gain amount that is easily used in calculations, and no temperature effects have to be taken into account. 
@@ -213,7 +214,7 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 This means if we know the output load, or the resistance of the speaker used (common values are 4, 8, and 16Ω), as well as the current that flows at the output stage, then we could solve for our power, AKA our wattage!
                 Now, I'm poor, and I haven't been able to afford a multimeter, but I do have the datasheets for the components I'm using. 
                 For the 2N5551 and 2N5401 transistors, both have a maximum collector-emitter current of 600mA. 
-                Because the output is connected within this collector-emitter path, it is limited to this current.
+                Because the output is connected within this collector-emitter path, it is (or should be) limited to this current.
                 I tested on a variety of speakers, but the one heard in the sound test has a value of 8Ω.
                 Ohm's law tells us that with current and resistance, we are able to solve for voltage and power, which,
                 in this case, is the max output voltage swing and max output wattage.<br />
