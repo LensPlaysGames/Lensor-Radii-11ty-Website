@@ -2,7 +2,7 @@
 url: https://lensor-radii-11ty.netlify.app/posts/five-bjt-footlong/
 title: Five BJT Footlong
 description: Make a powerful amplifier for less than ¢20!
-img-url: /img/Five-BJT-Footlong-Schematic.png
+img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.2-UPDATED.png
 ---
 
 {% block content %}
@@ -45,8 +45,8 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-sm card w-nomin gradient-diag-bright-2 text-body m-1">
-                    <div class="card-header"><a class="text-link" href="/img/Five-BJT-Footlong-Schematic.png" data-toggle="tooltip" title="Five BJT Footlong Circuit Diagram">
-                        <img class="img-fluid pic-sm shadow" src="/img/Five-BJT-Footlong-Schematic.png" alt="Circuit Diagram of Five Bipolar Junction Transistor Audio Amplifier made in EasyEDA"/></a>
+                    <div class="card-header"><a class="text-link" href="/img/Five-BJT-Footlong-Amplfier-Schematic-V1.2-UPDATED.png" data-toggle="tooltip" title="Five BJT Footlong Circuit Diagram">
+                        <img class="img-fluid pic-sm shadow" src="/img/Five-BJT-Footlong-Amplfier-Schematic-V1.2-UPDATED.png" alt="Circuit Diagram of Five Bipolar Junction Transistor Audio Amplifier made in EasyEDA"/></a>
                     </div>
                     <div class="card-body p-2"><cite><small>Circuit Diagram</small></cite></div>
                 </div>
@@ -95,14 +95,14 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 In this article, I explain both the function and how to build a common-collector Class AB power amplifier with a common-emitter Class A driver, as well as negative feedback and bootstrapping. 
-                I designed the circuit with darlington transistors, as this increases the input impedace (a la gain) with minimal repercussions. This also takes some thermal strain off of each transistor.<br />
+                I designed the circuit with darlington transistors, as this increases the input impedace (a la gain) with minimal repercussions for (my) audio applications. This also takes some thermal strain off of each individual transistor.<br />
             <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 This circuit can be powered anywhere from around +9v DC to (technically) the max that your transistors allow, 
-                although I don't recommend that unless you have a very serious heat-sink attached very well to your output stage and biasing components.
+                    although I don't recommend that unless you have a very serious heat-sink attached very well to your output stage and biasing components.
                 I tried +5v DC from a USB cable, but I found that it is almost impossible to get the bias correct in a way that it does not oscillate, 
-                or clip immediately due to only having around ±1v of headroom at the output.<br />
+                    or clip immediately due to only having around ±1v of headroom at the output.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,18 +113,20 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
             &nbsp;&nbsp;&nbsp;&nbsp;
                 C1 is up next, this is a coupling capacitor, which removes all DC components of the electronic signal and lets the AC flow (mostly) unharmed. 
                 If the value of C1 is too small, you may notice a decreased bass response. 
-                If too large, you may notice the transients are not as sharp as before, although this can be hard to hear audibly at first.<br />
+                If too large, you may notice the transients are not as sharp as before, although this can be hard to hear audibly (very clear on an oscilloscope).<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 Q1, an NPN transistor, acts as the driver (voltage amplifier), making sure the output stage has enough current and voltage, not just relying on whatever input you happen to plug in to supply your valuable, valuable electrons. 
-                This circuit could also be driven by an op-amp, like the NE5532 or similar, but a simple class A transistor amplifier works just as well when biased correctly.<br />
+                This circuit could also be driven by an op-amp, like the NE5532 or similar, but a simple class A transistor amplifier works just as well.
+                R4, an emitter resistor, is used to stabilise the performance of the driver circuit, albeit at the cost of less gain, overall.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 Q2 and Q3, both NPN transistors, as well as Q4 and Q5, both PNP transistors, make up the output-stage. There are two of each because they form darlington transistor pairs. 
-                You could also build this exact circuit without the darlington pairs (as I did, at first), but, like me, you'll come to realize those transistors get so hot they boil water off of your fingers, even with VCC+ @ +12v DC and the input coming from a 3.5mm jack on a phone.
-                So, yeah, that's something I can't recommend unless you have a sufficient heat-sink and/or a different transistor rated for higher current. <br />
+                As these are used within a current amplification stage, they have a tendency to get hot if driving them loud.
+                You could also build this exact circuit without the darlington pairs (as I did, at first), but, like me, you'll come to realize those transistors get so hot they boil water off of your fingers (with no heatsink, in a TO-92 package).
+                So, yeah, that's something I can't recommend unless you have a sufficient heat-sink and/or a different transistor rated for higher current.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -135,9 +137,9 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                Now, what are all those diodes in a row for? I'll explain. BJT, or Bipolar Junction Transistors, need a certain voltage at the base before it will start conducting (Usually around 0.6v to 0.7v). 
-                This means if the transistors are not correctly biased, any input signal will lose, or be clipped below that certain voltage. 
-                This is called crossover distortion.<br />
+                Now, what are all those diodes in a row for? I'll explain. BJT, or Bipolar Junction Transistors, need a certain voltage at the base before it will start conducting (Usually around 0.6v to 0.7v (600-700mV)). 
+                This means if the transistors are not correctly biased, any input signal will lose, or be clipped below that 'turn-on' voltage. 
+                The effect this has on the signal is called crossover distortion.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -145,32 +147,41 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 Since diodes have a similar constant voltage drop to BJT transistors (suspiciously the same), those can be used to get the voltages needed for proper biasing of our output-stage transistors.
                 Because there are four base-emitter junctions within the path that the signal takes through this amplification stage (two for each darlington pair), 4 x 0.7v (2.8v) of biasing is needed, AKA four diodes worth. 
                 This also means that the output voltage swing will be offset by this amount from the power rails. 
-                That explains why +5v DC does not work great to power this particular circuit, as the output voltage swing was limited to ±2.2v (0.78v RMS).
+                That explains why +5v DC does not work great to power this particular circuit, as the output voltage swing was limited to ±1.1v (0.78v RMS).
                 Pop those four diodes in series between the bases of the darlingtons and OOH baby she roars (math coming later).
                 To put it more absolutely, the entire input signal can now pass through the amplifier without the quiet bits being oh-so-violently ripped from the beautiful soundscape it once was.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                C2 is a coupling capacitor for the output, preventing any DC from getting to your speaker (or whatever load you are using). 
-                It also provides instant current to the speaker if it happens to need it (for example, during a heavy bass hit).<br />
+                The diodes can also be replaced with a transistor and a few resistors, which are more easily mounted to a heat-sink, allowing for thermal-runaway protection to be easily implemented (more on this below).<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                C3 is VERY IMPORTANT. If left out, the whole thing can oscillate (make sound with no input), and the output is very, very distorted (almost sounds like a growl). 
+                C2 is a coupling capacitor for the output, preventing any DC from getting to your speaker (or whatever load you are using). 
+                It also provides instant current to the speaker if it happens to need it (for example, during a heavy bass hit). 
+                As the value of this capacitor increases, more bass, or low-end, can be provided by the amp (to an extent).
+                Now, I'm a bass-head, so I put the largest cap I had on hand in there (4700uF).<br />
+                <br />
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
+                C3 is VERY IMPORTANT. 
+                It's value should be as large as possible, really. 
+                If left out, the whole thing can oscillate (make sound with no input), and the output is very, very distorted (almost sounds like a growl). 
                 It may seem useless to put a capacitor between power and ground, but it makes all the difference.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                It is best practice to add a small-value resistor in-between the output and the emitters of the output stage transistors. 
+                It is best practice to add a small-value resistor in-between the output and the emitters of the output stage transistors (in between Q3 and C2, as well as Q5 and C2).
                 This (as resistors do) attenuates the output (making it quieter), but gives some very nice-to-have features. 
                 The most prominent of those being that the circuit no longer relies on the transistor itself to set gain.
                 That means all that horrible non-linearity that transistors spit out due to temperature, humidity, 
-                and more environmental/manufacturing variables is removed (reduced) and now the circuit relies on a nice, linear resistor to set it's gain.<br />
+                    and more environmental/manufacturing variables is removed (reduced) and now the circuit relies on a nice, linear resistor to set it's gain.
+                These would serve the same purpose for the output stage as R4 does for the driver stage.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 Also best practice: any components used to bias the output stage (D1 through D4, in this case) 
-                should be mounted to the same heatsink as the output stage transistors. If this is not done, thermal runaway can commence. 
+                    should be mounted to the same heatsink as the output stage transistors. If this is not done, thermal runaway can commence. 
                 Thermal runaway is something that happens when a variable increases the device's temperature, increasing the variable, which increases the device's temperature, and so on.
                 For our output stage transistors, this variable is the amount of current flowing from collector to emitter. 
                 As that current increases, the transistors dissipate more power, increasing their temperature. 
@@ -180,28 +191,30 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 This means if the diodes share a thermal mass with the output transistors, everything can balance out and keep each other in check.
                 The diodes resist current if things get too hot, and the transistors amplify current if things are cold enough.
                 If you are familiar with diode design, you'll know that the packages they come in usually are not best for mounting on a heat-sink, 
-                which is why an easy-to-mount transistor can be used to replace these diodes (Diagram below).<br />
+                    which is why an easy-to-mount transistor can be used to replace these diodes (Diagram below).<br />
                 <br />
 
             <div class="text-center m-0 p-0 mb-3 underline"><h3>FEEDBACK</h3></div>
             &nbsp;&nbsp;&nbsp;&nbsp;
-                R2, connected to the shared emitters of the output stage, routes a portion of the in-phase output signal back to the out-of-phase input of the output-stage transistors.
-                Mixing an in-phase signal with an out-of-phase one will reduce the overall amplitude, so what's going on here?
+                R2, connected to the shared emitters of the output stage, routes a portion of the output signal back to the input, which is now out-of-phase, of the output-stage transistors.
+                Mixing a signal with an out-of-phase one will reduce the overall amplitude, so what's going on here?
                 Well, it does reduce the overall gain of the circuit. There's no getting around that we are reducing amplitude, here. 
                 It also has a tendency to cause oscillation if improper values are chosen. So, why even include it if it reduces amplification and causes problems?
                 Well, it also gives us a range of benefits that are very useful, even in audio applications.
                 One of those is reliability, or really, reproducibility. 
                 Transistor's functional values, like the amount of gain they produce, are very dependant on variable factors, like temperature, and humidity, even.
-                This means that in a cold room, you could blow out your speakers, and in a toasty sauna, it might not even amplify the input at all. For commercial products, this is not good.
-                To get around this environmental dependancy, we can set the gain of the amplifier using resistors, which have a linear temperature response. 
+                This means that in a cold room, you could blow out your speakers, and in a toasty sauna, it might not even amplify the input at all. 
+                For commercial products, this is <strong>not</strong> good.
+                To get around this environmental dependancy, we can set the gain of the amplifier using resistors, which have a linear response to many variables, including temperature. 
                 This gives us a solid, non-variable gain amount that is easily used in calculations, and no temperature effects have to be taken into account. 
                 Hurray! Now we can enjoy our tunes in the hot of the summer, and also in the freezing cold of the winter, with minimal variation. That's what I call reliable.<br />
                 <br />
             
             &nbsp;&nbsp;&nbsp;&nbsp;
-                R3, also connected to the shared emitters of the output stage (just after a coupling capacitor, C2), routes a portion of the in-phase output signal back to the (now) out-of-phase input. 
+                R3, also connected to the shared emitters of the output stage (just after a coupling capacitor, C2), routes a portion of the output signal back to the input. 
                 You may recognize this as the definition for positive feedback, or bootstrapping. 
-                This is the easiest type of feedback to understand, as you take an amplified signal, 'turn it down' through a resistor, and then feed it back into the input to give a small boost back to the output.<br />
+                This is the easiest type of feedback to understand, as you take an amplified signal, 
+                    'turn it down' through a resistor, and then feed it back into the input to give a small boost back to the output.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;You may be wondering what the wattage of this simple, cheap amplifier is. That means it's time for: MATH!<br />
@@ -217,12 +230,12 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
                 Because the output is connected within this collector-emitter path, it is (or should be) limited to this current.
                 I tested on a variety of speakers, but the one heard in the sound test has a value of 8Ω.
                 Ohm's law tells us that with current and resistance, we are able to solve for voltage and power, which,
-                in this case, is the max output voltage swing and max output wattage.<br />
+                    in this case, is the max output voltage swing and max output wattage.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 After a little math, I found this circuit to have a (theoretical) <strong>max output power of 2.88W</strong>, and a max output voltage swing of ±4.8v (1.7v RMS) with an 8Ω load. At 16Ω, this puppy can deliver over 5 Watts. 
-                This will blow all those tiny speakers you have laying around, and then some!
+                This will blow all those tiny 16Ω speakers you have laying around, and then some!
                 Not bad for five transistors and a few passive components, if I do say so myself.
 
         </span>
@@ -253,8 +266,8 @@ img-url: /img/Five-BJT-Footlong-Schematic.png
             <h2 class="underline py-2">Images & Diagrams</h2>
             <div class="row">
                 <div class="col-sm card w-nomin gradient-diag-bright-2 text-body m-1">
-                    <div class="card-header"><a class="text-link" href="/img/Five-BJT-Footlong-Schematic.png" data-toggle="tooltip" title="Five BJT Footlong Circuit Diagram - Lensor Radii">
-                        <img class="img-fluid pic-sm shadow" src="/img/Five-BJT-Footlong-Schematic.png" alt="Circuit Diagram of Five BJT Footlong Audio Amplifier"/></a>
+                    <div class="card-header"><a class="text-link" href="/img/Five-BJT-Footlong-Amplfier-Schematic-V1.2-UPDATED.png" data-toggle="tooltip" title="Five BJT Footlong Circuit Diagram - Lensor Radii">
+                        <img class="img-fluid pic-sm shadow" src="/img/Five-BJT-Footlong-Amplfier-Schematic-V1.2-UPDATED.png" alt="Circuit Diagram of Five BJT Footlong Audio Amplifier"/></a>
                     </div>
                     <div class="card-body p-2"><cite><small>Circuit Diagram</small></cite></div>
                 </div>
