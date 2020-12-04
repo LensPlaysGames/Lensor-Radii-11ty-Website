@@ -33,10 +33,10 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
             <tbody>
                 <tr><td>3</td><td>NPN Transistor</td><td>One acts as our driver (Q1) | The other two form a darlington transistor in the output stage (Q2, Q3)</td></tr>
                 <tr><td>2</td><td>PNP Transistor</td><td>Two PNP transistors connected to make a single darlington transistor (Q4, Q5)</td></tr>
-                <tr><td>4</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148)</td></tr>
-                <tr><td>1</td><td>4700μf Capacitor</td><td>Couples the output and output load (Block DC to speaker)</td></tr>
-                <tr><td>1</td><td>1000μf Capacitor</td><td>Provides power in the circuit to anything that needs it IMMEDIATELY</td></tr>
-                <tr><td>1</td><td>470μf Capacitor</td><td>Couples the input and driver circuit (Block DC to input device)</td></tr>
+                <tr><td>4</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148, and diodes with similar voltage drop)</td></tr>
+                <tr><td>1</td><td>4700μf Capacitor</td><td>C2 couples the output and output load (Block DC to speaker)</td></tr>
+                <tr><td>1</td><td>1000μf Capacitor</td><td>C3 provides power in the circuit to anything that needs it IMMEDIATELY</td></tr>
+                <tr><td>1</td><td>470μf Capacitor</td><td>C1 couples the input and driver circuit (Block DC to input device)</td></tr>
                 <tr><td>1</td><td>47kΩ Resistor</td><td>R2 provides negative feedback in this circuit</td></tr>
                 <tr><td>2</td><td>10kΩ Resistor</td><td>R1 increases input impedance | The other is part of R3, parallel (seen as '//' in the diagram) to the 220Ω and 47Ω resistors in series, to get a true 260Ω resistor</td></tr>
                 <tr><td>1</td><td>220Ω Resistor</td><td>In series (seen as '+' in the diagram) with the 47Ω resistor as part of R3</td></tr>
@@ -231,7 +231,7 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                 Using Ohm's law, we can use any two of those numbers (for example: voltage and current), and solve for the other two (resistance and power).
                 This means if we know any of those two things about the output signal, then we could solve for our power, AKA our wattage!
                 Now, I'm poor, and I haven't been able to afford a multimeter, 
-                    but I do have LTSpice (a <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" class="text-link" data-toggle="tooltip" title="LTSpice">free circuit simulation software</a>) and some determination.
+                    but I do have LTSpice (a <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" class="text-link" data-toggle="tooltip" title="Main Page - LTSpice">free circuit simulation software</a>) and some determination.
                 After building up the circuit and running the ".tran 100ms" command, 
                     I was greeted with a smooth sine-wave, meaning distortion was low! Hurray!
                 The output voltage swing (peak-to-peak voltage) is around 7.5v, while the current sat right above at 1A. 
@@ -269,8 +269,12 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                     <td><a class="badge badge-muted text-link p-2" href="https://www.electronics-tutorials.ws/transistor/darlington-transistor.html" data-toggle="tooltip" title="Darlington Transistors - Electronics Tutorials"><h4>https://www.electronics-tutorials.ws</h4></a></td>
                 </tr>
                 <tr>
-                    <td><h5 class="text-center">Transistors</h5></td>
+                    <td><h5 class="text-center">Regular Ol' Transistors</h5></td>
                     <td><a class="badge badge-dark text-link p-2" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials"><h4>https://www.electronics-tutorials.ws</h4></a></td>
+                </tr>
+                <tr>
+                    <td><h5 class="text-center">LTSpice Circuit Simulation Software (BEWARE: Advanced)</h5></td>
+                    <td><a class="badge badge-dark text-link p-2" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" data-toggle="tooltip" title="Main Page - LTSpice"><h4>https://www.electronics-tutorials.ws</h4></a></td>
                 </tr>
             </table>
         </div>
