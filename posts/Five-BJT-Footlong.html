@@ -33,7 +33,7 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
             <tbody>
                 <tr><td>3</td><td>NPN Transistor</td><td>One acts as our driver (Q1) | The other two form a darlington transistor in the output stage (Q2, Q3)</td></tr>
                 <tr><td>2</td><td>PNP Transistor</td><td>Two PNP transistors connected to make a single darlington transistor (Q4, Q5)</td></tr>
-                <tr><td>4</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148, and diodes with similar voltage drop)</td></tr>
+                <tr><td>4</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148, and diodes with a similar voltage drop)</td></tr>
                 <tr><td>1</td><td>4700μf Capacitor</td><td>C2 couples the output and output load (Block DC to speaker)</td></tr>
                 <tr><td>1</td><td>1000μf Capacitor</td><td>C3 provides power in the circuit to anything that needs it IMMEDIATELY</td></tr>
                 <tr><td>1</td><td>470μf Capacitor</td><td>C1 couples the input and driver circuit (Block DC to input device)</td></tr>
@@ -234,10 +234,10 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                     but I do have LTSpice (a <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" class="text-link" data-toggle="tooltip" title="Main Page - LTSpice">free circuit simulation software</a>) and some determination.
                 After building up the circuit and running the ".tran 100ms" command, 
                     I was greeted with a smooth sine-wave on the output, meaning distortion was relatively low! Hurray!
-                The input peak-to-peak voltage is 2v, with a current of 200µA.
+                The input peak-to-peak voltage is 2v, with a current of ~200µA.
                 The output voltage swing (peak-to-peak voltage) is around 7.5v, while the current sat right above at 1A. 
                 Luckily, P = IV, (you could also use P = V²/R successfully). 
-                The input wattage works out to be 400µW, which is <strong>very</strong> small.
+                The input wattage works out to be just under 400µW, which is <strong>very</strong> small.
                 To calculate the output wattage of our Five-BJT (not-so) Footlong amplifier, we just multiply those two output measurements together!
                 One of them being 1, that makes this very easy, giving us (~7.5v * ~1A) = ~7.5W. 
                 That means the power gain of the amplifier works out to (roughly) 18750. That's a lot of damage.
@@ -340,7 +340,7 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                     <div class="card-header"><a class="text-link" href="/img/Five-BJT-Footlong-V1.9.png" data-toggle="tooltip" title="Fast Fourier Transform - Lensor Radii">
                         <img class="img-fluid pic-sm shadow" src="/img/Five-BJT-Footlong-V1.9.png" alt="FFT of the circuit built in LTSpice Circuit Simulator" /></a>
                     </div>
-                    <div class="card-body p-2"><cite><small>LTSpice Simulation FFT (Distortion Analysis) [Input Below, Output Above]</small></cite></div>
+                    <div class="card-body p-2"><cite><small>LTSpice Simulation FFT (Distortion Analysis)</small></cite></div>
                 </div>
             </div>
         </div>
