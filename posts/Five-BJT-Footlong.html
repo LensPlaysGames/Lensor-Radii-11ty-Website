@@ -233,12 +233,17 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                 Now, I'm poor, and I haven't been able to afford a multimeter, 
                     but I do have LTSpice (a <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" class="text-link" data-toggle="tooltip" title="Main Page - LTSpice">free circuit simulation software</a>) and some determination.
                 After building up the circuit and running the ".tran 100ms" command, 
-                    I was greeted with a smooth sine-wave, meaning distortion was low! Hurray!
+                    I was greeted with a smooth sine-wave on the output, meaning distortion was relatively low! Hurray!
+                The input peak-to-peak voltage is 2v, with a current of 200µA.
                 The output voltage swing (peak-to-peak voltage) is around 7.5v, while the current sat right above at 1A. 
                 Luckily, P = IV, (you could also use P = V²/R successfully). 
-                To calculate the watts of our Five-BJT (not-so) Footlong amplifier, we just multiply those two together!
-                One of them being one, that makes this very easy, giving us (~7.5v * ~1A) = ~7.5W. 
-                Not bad for five transistors, 'low' (hardly audible) distortion, and some forethought.
+                The input wattage works out to be 400µW, which is <strong>very</strong> small.
+                To calculate the output wattage of our Five-BJT (not-so) Footlong amplifier, we just multiply those two output measurements together!
+                One of them being 1, that makes this very easy, giving us (~7.5v * ~1A) = ~7.5W. 
+                That means the power gain of the amplifier works out to (roughly) 18750. That's a lot of damage.
+                Not bad for five transistors, 'low' (hardly audible) distortion, minimal heat, and some forethought.<br />
+                <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;
                 Taking a look at the FFT (a way to visualize audio signals, mainly distortion (image below)), 
                     I found that the second-order harmonic of the output signal was down at -30dB, while the fundamental sat atop it's pedestal at +9dB.
                 With a 39dB difference, that calculates out to a 1.1% second-order harmonic.
@@ -247,8 +252,7 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
                     (which is fairly high for, let's say, the headphone out on a phone or similar device).
                 While that THD is not great in the hi-fi world (or any world, really), 
                     that is good enough for casual listening, 
-                    and most people cannot hear the distortion until presented with a clean tone as well.
-                <br />
+                    and most people cannot hear the distortion until presented with a clean tone as well.<br />
                 <br />
 
         </span>
