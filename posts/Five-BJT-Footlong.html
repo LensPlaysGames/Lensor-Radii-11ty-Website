@@ -31,13 +31,16 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V1.9.png
         <table class="col-lg-12 table table-dark table-striped">
             <thead> <tr><th>Quantity</th><th>Component</th><th>Description</th></tr></thead>
             <tbody>
-                <tr><td>3</td><td>NPN Transistor</td><td>One acts as our driver (Q1), the other two forming a darlington transistor in the output stage (Q2, Q3)</td></tr>
+                <tr><td>3</td><td>NPN Transistor</td><td>One acts as our driver (Q1) | The other two form a darlington transistor in the output stage (Q2, Q3)</td></tr>
                 <tr><td>2</td><td>PNP Transistor</td><td>Two PNP transistors connected to make a single darlington transistor (Q4, Q5)</td></tr>
                 <tr><td>4</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148)</td></tr>
-                <tr><td>2</td><td>1000μf Capacitor</td><td>One for coupling the output and output load (Block DC), one to provide power in the circuit to anything that needs it</td></tr>
-                <tr><td>1</td><td>100kΩ Resistor</td><td>Provides negative feedback for the circuit (R2)</td></tr>
-                <tr><td>1</td><td>2.2kΩ Resistor</td><td>Bootstraps the circuit (R3)</td></tr>
-                <tr><td>1</td><td>1kΩ Resistor</td><td>Increases input impedance (less oscillation, more gain)</td></tr>
+                <tr><td>1</td><td>4700μf Capacitor</td><td>Couples the output and output load (Block DC to speaker)</td></tr>
+                <tr><td>1</td><td>1000μf Capacitor</td><td>Provides power in the circuit to anything that needs it IMMEDIATELY</td></tr>
+                <tr><td>1</td><td>470μf Capacitor</td><td>Couples the input and driver circuit (Block DC to input device)</td></tr>
+                <tr><td>1</td><td>47kΩ Resistor</td><td>R2 provides negative feedback in this circuit</td></tr>
+                <tr><td>2</td><td>10kΩ Resistor</td><td>R1 increases input impedance | The other is part of R3, parallel (seen as '//' in the diagram) to the 220Ω and 47Ω resistors in series, to get a true 260Ω resistor</td></tr>
+                <tr><td>1</td><td>220Ω Resistor</td><td>In series (seen as '+' in the diagram) with the 47Ω resistor as part of R3</td></tr>
+                <tr><td>1</td><td>47Ω Resistor</td><td>Part of R3, in series with the 220Ω resistor</td></tr>
                 <tr><td><span class="text-danger">* </span>1</td><td>BB400 Breadboard</td><td>400 (or more) Tie-Point Solderless Plug-in Breadboard</td></tr>
                 <tr><td><span class="text-danger">* </span>Various</td><td>Breadboard Jumpers</td><td>90° Pre-Formed Jumper Wires that Plug into Breadboard Nicely</td></tr>
             </tbody>
