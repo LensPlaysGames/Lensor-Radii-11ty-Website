@@ -223,39 +223,8 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.png
                     'turn it down' through a resistor, and then feed it back into the input to give a small boost back to the output (and-so-on and-so-on and-so-on, hence the name: feedback).<br />
                 <br />
 
-            &nbsp;&nbsp;&nbsp;&nbsp;You may be wondering what the wattage of this simple, cheap amplifier is. That means it's time for: MATH!<br />
-                <br />
-
-            <div class="text-center m-0 p-0 mb-3 underline"><h3>MATH</h3></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-                Ohm's law tells us that voltage (V), current (I), resistance (Ω), and power (W) are all related mathematically.
-                Using Ohm's law, we can use any two of those numbers (for example: voltage and current), and solve for the other two (resistance and power).
-                This means if we know any of those two things about the output signal, then we could solve for our power, AKA our wattage!
-                Now, I'm poor, and I haven't been able to afford a multimeter, 
-                    but I do have LTSpice (a <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" class="text-link" data-toggle="tooltip" title="Main Page - LTSpice">free circuit simulation software</a>) and some determination.
-                After building up the circuit and running the ".tran 100ms" command, 
-                    I was greeted with a smooth sine-wave on the output, meaning distortion was relatively low! Hurray!
-                All values from here-on-out are assuming a load of 8Ω.
-                The input peak-to-peak voltage is 2v, while the current is at ~200µA.
-                The output peak-to-peak voltage (also known as voltage swing) is around 8v, while the current sat at about 1A.
-                Luckily, P = V²/R, so we have all the numbers we need to calculate the amplifier's wattage!
-                The input wattage works out to be just about 400µW, which is <strong>very</strong> small!
-                The output wattage equates to (~8v² / 8) = ~8W.
-                The amplifier gain can be calculated by dividing the output power by the input power. 
-                That means the power gain of this amplifier works out to about 20000! That's a lot of damage!
-                Not bad for five transistors, hardly audible distortion, minimal heat, and some forethought.<br />
-                <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;
-                Taking a look at the FFT (a way to visualize audio signals, mainly distortion (image below)), 
-                    I found that the second-order harmonic of the output signal was down right below -30dB, while the fundamental sat atop it's pedestal at around +9dB.
-                With about a 39dB difference, that calculates out to a ~1.1% second-order harmonic.
-                Looking at the rest of the FFT (within the audio range, which can be deceiving on the LTSpice FFT), 
-                    I can see that the THD (Total Harmonic Distortion) is under 10% with a 2v peak-to-peak input 
-                    (which is fairly high for, let's say, the headphone out on a phone or similar device).
-                While that THD is not great in the hi-fi world (or any world, really), 
-                    it pretty much represents the max real world input volume, meaning most listening will be well below 10% THD.
-                That is good enough for casual listening, and for an amplifier that costs &lt;$1 in raw components, I don't think I'll be complaining any time soon.<br />
-                <br />
+        <!--    &nbsp;&nbsp;&nbsp;&nbsp;You may be wondering what the wattage of this simple, cheap amplifier is. That means it's time for: MATH!<br />
+                <br />      -->
 
         </span>
         <div class="w-nomin gradient-diag-dark my-4 w-100 align-items-center justify-content-center">
