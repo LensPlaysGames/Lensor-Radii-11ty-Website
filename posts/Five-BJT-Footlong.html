@@ -93,6 +93,10 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.png
 
             <h2>ACTUAL ARTICLE</h2>
             &nbsp;&nbsp;&nbsp;&nbsp;
+                I do not recommend building this in it's current state. The darlington output stage can get quite hot with too large of an input, and it isn't easy to thermally stabilize.
+                Due to this, I am redesigning the amp with a complementary feedback pair output stage, also known as the Sziklai pair.
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
                 If you need a <a class="text-link" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials">refresher on transistors</a> and how they work, here is a great resource I found.<br /><br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -104,10 +108,8 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.png
             <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
-                This circuit can be powered anywhere from around +9v DC to (technically) the max that your transistors allow, 
-                    although I don't recommend that unless you have a very serious heat-sink attached very well to your output stage and biasing components.
-                I tried +5v DC from a USB cable, but I found that it is almost impossible to get the bias correct in a way that it does not oscillate, 
-                    or clip immediately due to only having around ±1v of headroom (if that) at the output. PATHETIC!<br />
+                This circuit should be powered with around 12v.
+                You might get away with 9, but you would have to change the feedback resistor values and therefore, correct your bias.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
