@@ -1,14 +1,13 @@
 ﻿---
 url: https://lensor-radii-11ty.netlify.app/posts/five-bjt-footlong/
 title: Five BJT Footlong
-description: Make a powerful amplifier for less than ¢20!
+description: Amplify audio while also cooking BJT's like it's nobody's business!
 img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
 ---
 
 {% block content %}
 <div class="row jumbotron gradient-diag m-0 my-2 p-3 text-center text-white">
     <h2 class="col-lg-12 pl-4 pt-0 mt-0 text-left">{{ title }}</h2>
-    <div class="badge badge-muted col-lg-12 text-warning">THIS ARTICLE IS A WORK IN PROGRESS</div>
     <div class="col-lg-12 card my-3 mx-auto gradient-diag-bright-2">
         <div class="card-header pl-4 pt-0 mt-0 text-center">
             <div class="w-nomin text-body text-center my-2">
@@ -20,7 +19,7 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
         <div class="card-body text-body text-center">{{ description }}</div>
     </div>
     <span class="jumbotron w-100 gradient-diag-bright text-left text-body py-2 my-3">
-        &nbsp;&nbsp;&nbsp;&nbsp;A loud, simple audio amplifier using common, everyday components (that YOU <em>probably</em> have).
+        &nbsp;&nbsp;&nbsp;&nbsp;One of my first audio amplifier designs using common, everyday components (that YOU <em>probably</em> have).
     </span>
     <div class="col-lg-12 card gradient-diag-dark m-0 my-2 p-3">
         <div class="badge badge-secondary mb-3">
@@ -59,11 +58,9 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
     <div class="col-lg-12 card w-nomin gradient-diag m-0 my-2 p-3 text-center align-items-center justify-content-center">
         <h2 class="underline py-2">Write-Up</h2>
         <span class="text-left">
-            <h2>TO-DO</h2>
-            <ul>
-                <li>Sound Demo</li>
-                <li>Circuit Explanation Video</li>
-            </ul>
+            <h2 class="text-center text-danger">STOP! DO NOT BUILD THIS CIRCUIT!</h2>
+            <h4 class="text-center text-danger">THIS CIRCUIT IS CONSTANTLY ABOUT TO THERMALLY RUN AWAY. LIKE A GOD DAMN ABUSED STEP-CHILD. 
+                ONLY BUILD THIS CIRCUIT IF YOU LIKE THE MAGIC SMOKE TO COME OUT OF YOUR WONDERFUL, INNOCENT TRANSITORS. YOU'VE BEEN WARNED!</h4>
 
             <h2>FACTUAL NOTES</h2>
             <ul>
@@ -93,23 +90,26 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
 
             <h2>ACTUAL ARTICLE</h2>
             &nbsp;&nbsp;&nbsp;&nbsp;
-                I do not recommend building this in it's current state. The darlington output stage can get quite hot with too large of an input, and it isn't easy to thermally stabilize.
-                Due to this, I am redesigning the amp with a complementary feedback pair output stage, also known as the Sziklai pair.
+                I do not recommend building this in it's current state. 
+                The darlington output stage can get quite hot and tends to thermally runaway, 
+                    meaning it's temperature keeps increasing even with no input until power is disconnected.
+                <a class="text-link" href="/posts/Sziklai-D/" data-toggle="tooltip" title="Sziklai-D Amplifier - Lensor Radii">
+                    Due to this, I am redesigning the amp with a complementary feedback pair output stage, also known as the Sziklai pair.</a><br />
+                <br />
 
-            &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 If you need a <a class="text-link" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials">refresher on transistors</a> and how they work, here is a great resource I found.<br /><br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 In this article, I explain both the function and how to build a common-collector Class AB power amplifier 
                     with a common-emitter Class A driver, as well as negative feedback and bootstrapping. 
                 I lovingly named this amplifier the 'Five BJT Footlong', due to my PCB design having them all at the top, in a row. 
-                I designed the circuit with darlington transistors, as this increases the input impedace (a la gain) with minimal repercussions for (my) audio applications. 
-                This also takes some thermal strain off of each individual transistor, allowing me to use tiny TO-92 package transistors, which are just 4.58mm in width and height, plus the leads.<br />
-            <br />
+                I designed the circuit with darlington transistors, as this increases the input impedace (a la gain) with major repercussions.<br />
+                <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
                 This circuit should be powered with around 12v.
-                You might get away with 9, but you would have to change the feedback resistor values and therefore, correct your bias.<br />
+                You might get away with 9, but you would have to change the feedback resistor values to correctly bias the circuit.<br />
                 <br />
 
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -225,8 +225,15 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
                     'turn it down' through a resistor, and then feed it back into the input to give a small boost back to the output (and-so-on and-so-on and-so-on, hence the name: feedback).<br />
                 <br />
 
-        <!--    &nbsp;&nbsp;&nbsp;&nbsp;You may be wondering what the wattage of this simple, cheap amplifier is. That means it's time for: MATH!<br />
-                <br />      -->
+            &nbsp;&nbsp;&nbsp;&nbsp;You may be wondering what the wattage of this simple, cheap amplifier is. That means it's time for: MATH!<br />
+                <br />
+
+            <div class="text-center m-0 p-0 mb-3 underline"><h3>MATH</h3></div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+                I recently got a multimeter, so here are the measurements I recorded.
+                <table class="table table-dark table-striped table-responsive">
+
+                </table>
 
         </span>
         <div class="w-nomin gradient-diag-dark my-4 w-100 align-items-center justify-content-center">
@@ -239,19 +246,19 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
                 </tr>
                 <tr>
                     <td><h5 class="text-center">Negative Feedback (NFB)</h5></td>
-                    <td><a class="badge badge-dark text-link p-2" href="https://learnabout-electronics.org/Amplifiers/amplifiers31.php" data-toggle="tooltip" title="Negative Feedback & Gain by Eric Coates - Learnabout Electronics"><h4>https://learnabout-electronics.org</h4></a></td>
+                    <td><a class="badge badge-dark text-link p-2" href="https://learnabout-electronics.org/Amplifiers/amplifiers31.php" data-toggle="tooltip" title="Negative Feedback & Gain by Eric Coates - Learnabout Electronics"><h4>learnabout-electronics.org</h4></a></td>
                 </tr>
                 <tr>
                     <td><h5 class="text-center">Darlington Transistors</h5></td>
-                    <td><a class="badge badge-muted text-link p-2" href="https://www.electronics-tutorials.ws/transistor/darlington-transistor.html" data-toggle="tooltip" title="Darlington Transistors - Electronics Tutorials"><h4>https://www.electronics-tutorials.ws</h4></a></td>
+                    <td><a class="badge badge-muted text-link p-2" href="https://www.electronics-tutorials.ws/transistor/darlington-transistor.html" data-toggle="tooltip" title="Darlington Transistors - Electronics Tutorials"><h4>www.electronics-tutorials.ws</h4></a></td>
                 </tr>
                 <tr>
                     <td><h5 class="text-center">Regular Ol' Transistors</h5></td>
-                    <td><a class="badge badge-dark text-link p-2" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials"><h4>https://www.electronics-tutorials.ws</h4></a></td>
+                    <td><a class="badge badge-dark text-link p-2" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials"><h4>www.electronics-tutorials.ws</h4></a></td>
                 </tr>
                 <tr>
                     <td><h5 class="text-center">LTSpice Circuit Simulation Software</h5></td>
-                    <td><a class="badge badge-dark text-link p-2" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" data-toggle="tooltip" title="Main Page - LTSpice"><h4>https://www.electronics-tutorials.ws</h4></a></td>
+                    <td><a class="badge badge-muted text-link p-2" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" data-toggle="tooltip" title="Main Page - LTSpice"><h4>www.analog.com</h4></a></td>
                 </tr>
             </table>
         </div>
@@ -317,11 +324,6 @@ img-url: /img/Five-BJT-Footlong-Amplfier-Schematic-V2.2.png
                 </div>
             </div>
         </div>
-        <a class="row mt-3 text-white" href="mailto:lensisengineering@gmail.com" data-toggle="tooltip" title="lensisengineering@gmail.com">
-            <div class="gradient-diag-light p-2 shadow">
-                Want the gerber (and other helpful files) for this project? Contact me at <span class="text-link">my email</span>.
-            </div>
-        </a>
         <a class="row mt-3 text-white" href="/donate/" data-toggle="tooltip" title="Donate Page - Lensor Radii">
             <div class="gradient-diag-light-2 p-2 shadow">
                It's not needed, but if you like anything I do and want to keep it going, check out my <span class="text-link">donate page</span>.
