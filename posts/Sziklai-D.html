@@ -18,9 +18,23 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
         </div>
         <div class="card-body text-body text-center">{{ description }}</div>
     </div>
-    <span class="jumbotron w-100 gradient-diag-bright text-left text-body py-2 my-3">
-        &nbsp;&nbsp;&nbsp;&nbsp;A single-supply, reliable amplifier made from cheap, everyday components.
-    </span>
+    <div class="text-white w-100 card w-nomin gradient-diag-dark shadow my-2 p-0">
+        <div class="card-head text-center underline py-2"><h3>Audio Demo</h3></div>
+        <div class="card-body">
+            <div class="gradient-diag">
+                <div class="text-left px-5 py-3 m-1">
+                    <h2 class="underline">Lemonade</h2>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;by Internet Money</span>
+                </div>
+                <audio class="m-2 col-sm w-100" controls async preload="auto" src="/audio/Sound-Demos/CFP-Sziklai-D-Amp/LEMONADE.WAV" type="audio/wav">
+                    <span>Your Browser Does Not Support The Audio Tag, but you can still <a href="/audio/Sound-Demos/CFP-Sziklai-D-Amp/LEMONADE.WAV" data-toggle="tooltip" title="Download 'Sziklai Amplifier Audio Test & Sound Demo'">Download The File</a></span>
+                </audio>
+                <div class="text-center mb-2 pb-2">
+                    <small>Recorded with a Zoom H1n Cardioid Condenser Microphone</small>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="col-lg-12 card gradient-diag-dark m-0 my-2 p-3">
         <div class="badge badge-secondary mb-3">
             <h3 class="text-white">Materials</h3>
@@ -62,7 +76,6 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
             <h2>TO-DO</h2>
             <ul>
                 <li>Write Article</li>
-                <li>Sound Demo</li>
                 <li>Live Build & Test Video</li>
             </ul>
 
@@ -70,7 +83,8 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
         <ul>
             <li>
                 George Sziklai, a Hungarian born in 1909, invented a configuration of standard BJT transistors. 
-                This configuration was named the Sziklai pair, although you might see it referred to as the complmentary feedback pair in modern days.
+                This configuration was named the Sziklai pair, 
+                    although you might see it referred to as the complmentary feedback pair in modern days.
             </li>
             <li>The Sziklai Advantage
                 <ul>
@@ -80,53 +94,89 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
                 </ul>
             </li>
             <li>
-               +9v DC to transistor maximum (consult datasheet), if heat wasn't so darn hot.
+               Powered from a single-supply: +9v DC all the way to the transistor's maximum (consult datasheet), if heat wasn't so darn hot.
             </li>
             <li>
-                The feedback values in this circuit are fairly fine-tuned for my phone's measured audio jack output which was 0.11v RMS and 0.31v Peak-to-Peak.
-                I found this worked nicely, as my phone is able to go max volume with a full +12v DC. 
+                The feedback values in this circuit are fairly fine-tuned for my phone's measured audio jack output which was 0.11v RMS, or 0.31v Peak-to-Peak.
+                I chose these values by playing around in LTSpice (a circuit simulation software) 
+                    and comparing the distortion on the output until it was within my acceptable levels.
+                At +9v DC, I can crank the volume and don't run into (audible) distortion.
                 At +8v DC, from a car battery under load, it clips at the highest two volume-notches, which is good enough for my use-case.
             </li>
             <li>
-                I also discovered it to sound amazing with a guitar as an input, but I would recommend larger output transistors with more power dissipation, or at least a heat-sink/fan.
+                I also discovered it to sound amazing with a guitar as an input, 
+                    but I would recommend larger output transistors with more power dissipation, or at least a heat-sink/fan, 
+                    as guitar's can have voltage transients of up to 5v!
             </li>
             <li>
                 The op-amp circuit is louder, but with +9v DC single-supply it's pretty rough on the ol' distortion. 
-                With a ±9v or a larger split-power supply, this would be much more viable and offer more gain with less distortion, overall.
+                With a ±9v or larger split-power supply, this would be much more viable and offer more gain with less distortion, overall.
             </li>
             <li>
                 It is best practice to add small-value (0R22), high-wattage resistors (5W or more) on the output "emitters" (collectors of Q2, Q4) of the output-stage transistors.
-                This increases linearity for the output stage at different temperatures (although the Sziklai pair is already very linear to begin with), and, most importantly,
-                limits current as temperature rises. This further prevents thermal runaway, although I found it to be stable with TO-92 output transistors and no heat-sink.
+                This increases linearity for the output stage at different temperatures 
+                    (although the Sziklai pair is already very linear to begin with), and, most importantly, limits current as temperature rises. 
+                This further prevents thermal runaway, although I found it to be stable with TO-92 output transistors and no heat-sink.
             </li>
         </ul>
         </span>
         <div class="w-nomin gradient-diag-dark my-4 w-100 align-items-center justify-content-center">
             <h6 class="p-3 underline text-left">Want some more information? Here's some great pages I could find:</h6>
             <div class="table table-responsive">
-            <table class="table table-dark table-striped text-white shadow align-items-center justify-content-center">
-                <tr>
-                    <td><h5 class="text-center">Positive Feedback (Bootstrapping)</h5></td>
-                    <td><a class="badge badge-muted text-link p-2 text-center" href="https://circuitdigest.com/electronic-circuits/bootstrap-amplifier-circuit-using-transistors" data-toggle="tooltip" title="Bootstrap Amplifier Circuit using Transistors by Pankaj Khatri - Circuit Digest"><h4>https://circuitdigest.com</h4></a></td>
-                </tr>
-                <tr>
-                    <td><h5 class="text-center">Negative Feedback (NFB)</h5></td>
-                    <td><a class="badge badge-dark text-link p-2" href="https://learnabout-electronics.org/Amplifiers/amplifiers31.php" data-toggle="tooltip" title="Negative Feedback & Gain by Eric Coates - Learnabout Electronics"><h4>learnabout-electronics.org</h4></a></td>
-                </tr>
-                <tr>
-                    <td><h5 class="text-center">Transistors</h5></td>
-                    <td><a class="badge badge-muted text-link p-2" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials"><h4>www.electronics-tutorials.ws</h4></a></td>
-                </tr>
-                <tr>
-                    <td><h5 class="text-center">Sziklai Transistors</h5></td>
-                    <td><a class="badge badge-dark text-link p-2" href="https://sound-au.com/articles/cmpd-vs-darl.htm#ref" data-toggle="tooltip" title="Sziklai vs Darlington Transistors - Elliot Sound"><h4>sound-au.com</h4></a></td>
-                </tr>
-                <tr>
-                    <td><h5 class="text-center">LTSpice Circuit Simulation Software</h5></td>
-                    <td><a class="badge badge-muted text-link p-2" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" data-toggle="tooltip" title="Main Page - LTSpice"><h4>www.analog.com</h4></a></td>
-                </tr>
-            </table>
+                <table class="table table-dark table-striped text-white shadow align-items-center justify-content-center">
+                    <tr>
+                        <td><h5 class="text-center">Positive Feedback (Bootstrapping)</h5></td>
+                        <td><a class="badge badge-muted text-link p-2 text-center" href="https://circuitdigest.com/electronic-circuits/bootstrap-amplifier-circuit-using-transistors" data-toggle="tooltip" title="Bootstrap Amplifier Circuit using Transistors by Pankaj Khatri - Circuit Digest"><h4>https://circuitdigest.com</h4></a></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="text-center">Negative Feedback (NFB)</h5></td>
+                        <td><a class="badge badge-dark text-link p-2" href="https://learnabout-electronics.org/Amplifiers/amplifiers31.php" data-toggle="tooltip" title="Negative Feedback & Gain by Eric Coates - Learnabout Electronics"><h4>learnabout-electronics.org</h4></a></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="text-center">Transistors</h5></td>
+                        <td><a class="badge badge-muted text-link p-2" href="https://www.electronics-tutorials.ws/transistor/tran_1.html" data-toggle="tooltip" title="Transistors - Electronics Tutorials"><h4>www.electronics-tutorials.ws</h4></a></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="text-center">Sziklai Transistors</h5></td>
+                        <td><a class="badge badge-dark text-link p-2" href="https://sound-au.com/articles/cmpd-vs-darl.htm#ref" data-toggle="tooltip" title="Sziklai vs Darlington Transistors - Elliot Sound"><h4>sound-au.com</h4></a></td>
+                    </tr>
+                    <tr>
+                        <td><h5 class="text-center">LTSpice Circuit Simulation Software</h5></td>
+                        <td><a class="badge badge-muted text-link p-2" href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" data-toggle="tooltip" title="Main Page - LTSpice"><h4>www.analog.com</h4></a></td>
+                    </tr>
+                </table>
+            </div>
         </div>
+        <div class="text-white w-100 card w-nomin gradient-diag-dark shadow my-2 p-0">
+            <div class="card-head text-center underline py-2"><h3>More Audio</h3></div>
+            <div class="card-body pt-1 mt-1">
+                <div class="gradient-diag">
+                    <div class="text-left px-5 py-3 m-1">
+                        <h2 class="underline">King Alfred</h2>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;by IDK</span>
+                    </div>
+                    <audio class="m-2 col-sm w-100" controls async preload="auto" src="/audio/Sound-Demos/CFP-Sziklai-D-Amp/IDK-King-Alfred.mp3" type="audio/mpeg">
+                        <span>Your Browser Does Not Support The Audio Tag, but you can still <a href="/audio/Sound-Demos/CFP-Sziklai-D-Amp/LEMONADE.WAV" data-toggle="tooltip" title="Download 'Sziklai Amplifier Audio Test & Sound Demo'">Download The File</a></span>
+                    </audio>
+                    <div class="text-center mb-2 pb-2">
+                        <small>Recorded with a Zoom H1n Cardioid Condenser Microphone</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body pt-1 mt-1">
+                <div class="gradient-diag">
+                    <div class="text-left px-5 py-3 m-1">
+                        <h2 class="underline">The London</h2>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;by Young Thug ft. J-Cole & Travis Scott</span>
+                    </div>
+                    <audio class="m-2 col-sm w-100" controls async preload="auto" src="/audio/Sound-Demos/CFP-Sziklai-D-Amp/Da-London.mp3" type="audio/mpeg">
+                        <span>Your Browser Does Not Support The Audio Tag, but you can still <a href="/audio/Sound-Demos/CFP-Sziklai-D-Amp/Da-London.mp3" data-toggle="tooltip" title="Download 'Sziklai Amplifier Audio Test & Sound Demo'">Download The File</a></span>
+                    </audio>
+                    <div class="text-center mb-2 pb-2">
+                        <small>Recorded with a Zoom H1n Cardioid Condenser Microphone</small>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="jumbotron col-lg-12 gradient-diag py-2 mb-0">
             <h2 class="underline py-2">Images & Diagrams</h2>
