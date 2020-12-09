@@ -19,7 +19,7 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
         <div class="card-body text-body text-center">{{ description }}</div>
     </div>
     <span class="jumbotron w-100 gradient-diag-bright text-left text-body py-2 my-3">
-        &nbsp;&nbsp;&nbsp;&nbsp;A single supply (+9v DC and up), reliable amplifier made from cheap, everyday components.
+        &nbsp;&nbsp;&nbsp;&nbsp;A single-supply, reliable amplifier made from cheap, everyday components.
     </span>
     <div class="col-lg-12 card gradient-diag-dark m-0 my-2 p-3">
         <div class="badge badge-secondary mb-3">
@@ -34,11 +34,11 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
                 <tr><td>3</td><td>NPN Transistor</td><td>One acts as our driver (Q5) | The others form half of the Sziklai pairs in the output stage (Q1, Q2)</td></tr>
                 <tr><td>2</td><td>PNP Transistor</td><td>The other half of the output-stage (Q4, Q5)</td></tr>
                 <tr><td>2</td><td>Rectifier Diode</td><td>I used the 1N4007 but a wide variety of rectifier diodes would work (1N400x, 1N4148, and diodes with a similar voltage drop)</td></tr>
-                <tr><td>1</td><td>4700μf Capacitor</td><td>C1 couples the output and output load (Block DC to speaker)</td></tr>
-                <tr><td>1</td><td>1000μf Capacitor</td><td>C3 provides power in the circuit to anything that needs it IMMEDIATELY</td></tr>
+                <tr><td>1</td><td>4700μf Capacitor</td><td>C1 couples the output and output load (Block DC to speaker) | Any large value will work</td></tr>
+                <tr><td>1</td><td>1000μf Capacitor</td><td>C3 provides power in the circuit to anything that needs it IMMEDIATELY | Increases turn-on time</td></tr>
                 <tr><td>1</td><td>470μf Capacitor</td><td>C2 couples the input and driver circuit (Block DC to input device)</td></tr>
-                <tr><td>1</td><td>220kΩ Resistor</td><td>R2 provides negative feedback in this circuit</td></tr>
-                <tr><td>1</td><td>2.2kΩ Resistor</td><td>R3 provides positive feedback in this circuit</td></tr>
+                <tr><td>1</td><td>220kΩ Resistor</td><td>R3 provides negative feedback in this circuit</td></tr>
+                <tr><td>1</td><td>2.2kΩ Resistor</td><td>R2 provides positive feedback in this circuit</td></tr>
                 <tr><td>1</td><td>10kΩ Resistor</td><td>R1 increases input impedance</td></tr>
                 <tr><td>1</td><td>20Ω Resistor</td><td>R4 increases the input stage's stability and linearity</td></tr>
                 <tr><td><span class="text-danger">* </span>1</td><td>BB400 Breadboard</td><td>400 (or more) Tie-Point Solderless Plug-in Breadboard</td></tr>
@@ -78,6 +78,26 @@ img-url: /img/CFP-AMP-SCHEMATIC-V1.5.png
                         Negative feedback is included inherently within the transistor design, protecting from thermal runaway, and reducing distortion.
                     </li>
                 </ul>
+            </li>
+            <li>
+               +9v DC to transistor maximum (consult datasheet), if heat wasn't so darn hot.
+            </li>
+            <li>
+                The feedback values in this circuit are fairly fine-tuned for my phone's measured audio jack output which was 0.11v RMS and 0.31v Peak-to-Peak.
+                I found this worked nicely, as my phone is able to go max volume with a full +12v DC. 
+                At +8v DC, from a car battery under load, it clips at the highest two volume-notches, which is good enough for my use-case.
+            </li>
+            <li>
+                I also discovered it to sound amazing with a guitar as an input, but I would recommend larger output transistors with more power dissipation, or at least a heat-sink/fan.
+            </li>
+            <li>
+                The op-amp circuit is louder, but with +9v DC single-supply it's pretty rough on the ol' distortion. 
+                With a ±9v or a larger split-power supply, this would be much more viable and offer more gain with less distortion, overall.
+            </li>
+            <li>
+                It is best practice to add small-value (0R22), high-wattage resistors (5W or more) on the output "emitters" (collectors of Q2, Q4) of the output-stage transistors.
+                This increases linearity for the output stage at different temperatures (although the Sziklai pair is already very linear to begin with), and, most importantly,
+                limits current as temperature rises. This further prevents thermal runaway, although I found it to be stable with TO-92 output transistors and no heat-sink.
             </li>
         </ul>
         </span>
